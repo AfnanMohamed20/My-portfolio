@@ -312,3 +312,45 @@ section{
 }
 
 
+@media (max-width: 768px) {
+
+    .myprojects {
+        margin: 10px;
+    }
+
+    .cards {
+        margin: 10px 0;
+        padding: 0 10px;
+        gap: 16px;
+        overflow-x: auto;                 /* سحب أفقي */
+        scroll-snap-type: x mandatory;    /* الكارت يثبت في النص */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;            /* يخفي الـ scrollbar */
+    }
+
+    .cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card {
+        flex: 0 0 85%;                    /* الكارت ياخد 85% من عرض الشاشة */
+        width: 85%;
+        height: auto;                     /* الارتفاع على حسب الكلام */
+        min-height: 380px;
+        scroll-snap-align: center;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .card h4 {
+        min-height: 0;                    /* مفيش داعي لحجز مساحة العنوان */
+    }
+
+    .arrow {
+        display: none;                    /* الأسهم مش لازمة، المستخدم هيسحب بصباعه */
+    }
+}
+
+
