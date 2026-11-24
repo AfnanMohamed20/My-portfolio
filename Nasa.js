@@ -58,9 +58,17 @@ projects.forEach(project => {
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 
-next.addEventListener("click",()=>{
-  cardsContainer.scrollBy({left:300,behavior:"smooth"})
-})
+function getScrollAmount() {
+  const card = cardsContainer.querySelector(".card");
+  const gap = parseInt(getComputedStyle(cardsContainer).gap) || 0;
+  const cardWidth = card.offsetWidth + gap;
+  return window.innerWidth <= 768 ? cardWidth * 2 : cardWidth;
+}
+
+next.addEventListener("click", () => {
+  cardsContainer.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+});
+
 prev.addEventListener("click", () => {
-  cardsContainer.scrollBy({ left: -300, behavior: "smooth" });
+  cardsContainer.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
 });

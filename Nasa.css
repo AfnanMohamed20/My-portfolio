@@ -143,6 +143,16 @@ section{
     padding-left: 20px;
     padding-right: 20px;
     margin: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex-shrink: 0;
 }
 .cardtitle{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
