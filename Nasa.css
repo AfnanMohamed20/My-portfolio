@@ -318,14 +318,18 @@ section{
         margin: 10px;
     }
 
+    .slider {
+        padding: 0 22px;              /* مساحة للأسهم على الجنبين */
+    }
+
     .cards {
         margin: 10px 0;
-        padding: 0 10px;
-        gap: 16px;
-        overflow-x: auto;                 /* سحب أفقي */
-        scroll-snap-type: x mandatory;    /* الكارت يثبت في النص */
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;            /* يخفي الـ scrollbar */
+        padding: 0;
+        gap: 10px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
     }
 
     .cards::-webkit-scrollbar {
@@ -333,24 +337,52 @@ section{
     }
 
     .card {
-        flex: 0 0 85%;                    /* الكارت ياخد 85% من عرض الشاشة */
-        width: 85%;
-        height: auto;                     /* الارتفاع على حسب الكلام */
-        min-height: 380px;
-        scroll-snap-align: center;
+        flex: 0 0 calc((100% - 10px) / 2);   /* كارتين في الشاشة */
+        width: auto;
+        height: 360px;
+        scroll-snap-align: start;
     }
 
     .card img {
-        height: 150px;
+        height: 100px;
     }
 
     .card h4 {
-        min-height: 0;                    /* مفيش داعي لحجز مساحة العنوان */
+        font-size: 13px;
+        padding: 10px 10px 0;
+        min-height: 0;
+    }
+
+    .card p {
+        font-size: 12px;
+        padding: 6px 10px 0;
+        line-height: 1.3;
+    }
+
+    .card .card-actions {
+        margin: auto 10px 10px;
+        gap: 6px;
+    }
+
+    .card .card-actions a {
+        height: 30px;
+        padding: 0 12px;
+        font-size: 11px;
+        white-space: nowrap;              /* يمنع لف كلمة View Project */
+    }
+
+    .card .card-actions a.github-icon {
+        width: 30px;
+        padding: 0;
+        font-size: 16px;
     }
 
     .arrow {
-        display: none;                    /* الأسهم مش لازمة، المستخدم هيسحب بصباعه */
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
     }
+
+    .left  { left: -4px; }
+    .right { right: -4px; }
 }
-
-
