@@ -58,6 +58,8 @@ projects.forEach(project => {
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 
+// دى function بتحسب عدد ال px اللى لازم يتحركها عشان يتحرك ويظهر الكارت اللى بعده
+
 function getScrollAmount() {
   const card = cardsContainer.querySelector(".card");
   const gap = parseInt(getComputedStyle(cardsContainer).gap) || 0;
